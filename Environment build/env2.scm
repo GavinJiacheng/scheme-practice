@@ -1,0 +1,20 @@
+(define make-empty-env
+  (lambda ()
+    '()
+  )
+)
+(define (connectval var val env)
+    (cons (cons var (cons val '()))
+          env
+    )
+)
+(define (extend-env v val env)
+  (connectval v val env)
+)
+(define (apply-env env v)
+  (cond
+    ((equal? v (car (car env))) (car (cdr (car env))))
+    ((null? (cdr env)) (error "apply-env: empty environment"))
+    (else   (apply-env (cdr env) v))
+  )
+)
