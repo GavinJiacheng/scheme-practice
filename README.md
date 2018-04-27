@@ -1,4 +1,4 @@
-# scheme-practice
+# Scheme-Practice
 This is the basical practice for scheme.
 This was my SFU's assignment. Please DO NOT copy it if you have the similar assignment.
 
