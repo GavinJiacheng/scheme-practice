@@ -7,7 +7,9 @@ A environment is a data structure that represents variables and their values.
 I used these functions to build an environment:
 
 * Returns a new empty environment:
-  * (make-empty-env)
+```scheme
+(make-empty-env)
+```
 
 * Returns the value of variable v in environment env:
 ```scheme
