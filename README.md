@@ -2,6 +2,146 @@
 This is the basical practice for scheme.
 This was my SFU's assignment. Please DO NOT copy it if you have the similar assignment.
 
+Here are some examples:
+```scheme
+> (singleton? '(4 mouse ()))
+#f
+
+> (singleton? '(xy))
+#t
+
+> (singleton? 4)
+#f
+```
+```scheme
+> (my-make-list 3 'a)
+(a a a)
+
+> (my-make-list 2 '(1 2 3))
+((1 2 3) (1 2 3))
+
+> (my-make-list 2 (my-make-list 3 '(a b)))
+(((a b) (a b) (a b)) ((a b) (a b) (a b)))
+```
+
+```scheme
+> (my-iota 0)
+()
+
+> (my-iota 1)
+(0)
+
+> (my-iota 2)
+(0 1)
+
+> (my-iota 5)
+(0 1 2 3 4)
+```
+
+```scheme
+> (my-length '())
+    0
+
+> (my-length '(a))
+1
+
+> (my-length '(a (b c) d))
+3
+```
+
+```scheme
+> (nth '(a b c) 0)
+a
+
+> (nth '(a b c) 1)
+b
+
+> (nth '(a b c) 2)
+c
+
+> (nth '(a b c) 3)
+;bad index
+```
+
+```scheme
+> (my-last '(cat))
+cat
+
+> (my-last '(cat dog))
+dog
+
+> (my-last '(cat dog (1 2 3)))
+(1 2 3)
+
+> (my-last '())
+my-last: empty list
+```
+
+```scheme
+> (my-filter odd? '(5 7 0 -6 4))
+(5 7)
+
+> (my-filter odd? '(10 5 7 0 11 4))
+(5 7 11)
+
+> (my-filter list? '(hat (left right) 4 ()))
+((left right) ())
+
+> (my-filter (lambda (x) (or (= x 5) (< x 0))) '(5 6 9 -6 2 5 0 5))
+(5 -6 5 5)
+```
+
+```scheme
+> (my-append '(1 2 3) '(4 5 6 7))
+(1 2 3 4 5 6 7)
+
+> (my-append '(1 2 3) '(4))
+(1 2 3 4)
+
+> (my-append '() '(4))
+(4)
+```
+
+```scheme
+> (append-all '())
+()
+
+> (append-all '((a)))
+(a)
+
+> (append-all '((a) (b c)))
+(a b c)
+
+> (append-all '((a) (b c) (d)))
+(a b c d)
+
+> (append-all '((a) (b c) (d) (e f)))
+(a b c d e f)
+```
+
+```scheme
+> (my-sort '())
+()
+
+> (my-sort '(3))
+(3)
+
+> (my-sort '(4 1 3 7 5 5 1))
+(1 1 3 4 5 5 7)
+```
+
+```scheme
+> (all-bits 0)
+()
+
+> (all-bits 1)
+((0) (1))
+
+> (all-bits 2)
+((0 0) (0 1) (1 0) (1 1))
+```
+
+
 # Environment
 A environment is a data structure that represents variables and their values. 
 I used these functions to build an environment:
